@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6b1k5222ts76"]
+
+[ext_resource type="Script" path="res://mn.gd" id="1_agbek"]
+
+[node name="mn" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_agbek")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.003
+anchor_right = 0.003
+offset_left = 4.544
+offset_top = 521.0
+offset_right = 259.544
+offset_bottom = 639.0
+text = "show"
+
+[node name="s" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.003
+anchor_right = 0.003
+offset_left = 443.544
+offset_top = 522.0
+offset_right = 698.544
+offset_bottom = 640.0
+text = "clear"
+
+[node name="t" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.003
+anchor_right = 0.003
+offset_left = 868.544
+offset_top = 519.0
+offset_right = 1123.54
+offset_bottom = 637.0
+text = "exit"
+
+[node name="e" type="Label" parent="."]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 89.0
+offset_right = 738.0
+offset_bottom = 206.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="s" to="." method="_on_s_pressed"]
+[connection signal="pressed" from="t" to="." method="_on_t_pressed"]

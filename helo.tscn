@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqkxuw17s34hs"]
+
+[ext_resource type="Script" path="res://helo.gd" id="1_mwxe1"]
+
+[node name="helo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = 3.0
+offset_right = -7.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mwxe1")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 155.0
+offset_right = 731.0
+offset_bottom = 472.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="btn show" type="Button" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 547.0
+offset_right = 188.0
+offset_bottom = 642.0
+text = "show"
+
+[node name="btn clear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 442.0
+offset_top = 544.0
+offset_right = 625.0
+offset_bottom = 639.0
+text = "clear"
+
+[node name="btn exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 935.0
+offset_top = 547.0
+offset_right = 1118.0
+offset_bottom = 642.0
+text = "exit"
+
+[connection signal="pressed" from="btn show" to="." method="_on_btn_show_pressed"]
+[connection signal="pressed" from="btn clear" to="." method="_on_btn_clear_pressed"]
+[connection signal="pressed" from="btn exit" to="." method="_on_btn_exit_pressed"]
