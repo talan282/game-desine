@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://me8retvxufxf"]
+
+[ext_resource type="Script" path="res://about.gd" id="1_touls"]
+
+[node name="about" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_touls")
+
+[node name="t" type="Label" parent="."]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 123.0
+offset_right = 602.0
+offset_bottom = 220.0
+text = "hi"
+
+[node name="show btn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 284.0
+offset_top = 328.0
+offset_right = 377.0
+offset_bottom = 430.0
+text = "show"
+
+[node name="clear btn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 443.0
+offset_top = 328.0
+offset_right = 536.0
+offset_bottom = 430.0
+text = "clear"
+
+[node name="exit btn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 622.0
+offset_top = 329.0
+offset_right = 715.0
+offset_bottom = 431.0
+text = "exit"
+
+[connection signal="pressed" from="show btn" to="." method="_on_show_btn_pressed"]
+[connection signal="pressed" from="clear btn" to="." method="_on_clear_btn_pressed"]
+[connection signal="pressed" from="exit btn" to="." method="_on_exit_btn_pressed"]
