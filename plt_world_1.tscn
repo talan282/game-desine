@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://b3dava84oo0hk"]
+
+[ext_resource type="Script" path="res://plt_world1.gd" id="1_lrcxk"]
+[ext_resource type="PackedScene" uid="uid://bom2kyoqws54a" path="res://plt_player.tscn" id="2_rg8l7"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_m1bt6"]
+a = Vector2(66, 9)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gsf0h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hcexf"]
+size = Vector2(41, 38)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_imgxb"]
+
+[node name="plt_world1" type="Node2D"]
+script = ExtResource("1_lrcxk")
+
+[node name="world" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="world"]
+polygon = PackedVector2Array(20, 48, 13, 100, 23, 141, 33, 173, 26, 214, 32, 246, 87, 241, 105, 208, 122, 180, 149, 153, 170, 191, 211, 163, 218, 218, 235, 242, 273, 257, 331, 257, 379, 251, 400, 192, 410, 153, 452, 127, 462, 103, 502, 94, 565, 108, 505, 155, 509, 207, 564, 201, 569, 248, 657, 271, 684, 264, 718, 268, 718, 198, 684, 164, 768, 152, 811, 142, 785, 99, 879, 80, 896, 29, 1043, 71, 1084, -100, 1128, 250, 1043, 290, 272, 301, 12, 293, -2, 44)
+
+[node name="Polygon2D" type="Polygon2D" parent="world/CollisionPolygon2D"]
+
+[node name="spawn point" type="StaticBody2D" parent="."]
+position = Vector2(63, 79)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spawn point"]
+shape = SubResource("SegmentShape2D_m1bt6")
+
+[node name="Sprite2D" type="Sprite2D" parent="spawn point/CollisionShape2D"]
+position = Vector2(39.5067, 8.87755)
+scale = Vector2(-78.0134, 1.2937)
+texture = SubResource("PlaceholderTexture2D_gsf0h")
+
+[node name="plt player" parent="." instance=ExtResource("2_rg8l7")]
+
+[node name="interrct" type="RigidBody2D" parent="."]
+position = Vector2(330, 143)
+input_pickable = true
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interrct"]
+position = Vector2(-30, -30)
+shape = SubResource("RectangleShape2D_hcexf")
+
+[node name="Sprite2D" type="Sprite2D" parent="interrct"]
+position = Vector2(-30, -30)
+scale = Vector2(40, 39.75)
+texture = SubResource("PlaceholderTexture2D_imgxb")
+
+[connection signal="mouse_entered" from="interrct" to="." method="_on_interrct_mouse_entered"]

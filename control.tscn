@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://herfv2vh7yee"]
+
+[ext_resource type="Script" path="res://Control.gd" id="1_tf5mh"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -13.0
+offset_top = 3.0
+offset_right = -13.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tf5mh")
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 6.0
+offset_right = 733.0
+offset_bottom = 202.0
+
+[node name="cal" type="Button" parent="."]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 239.0
+offset_right = 191.0
+offset_bottom = 279.0
+rotation = -0.0223959
+text = "cal"
+
+[node name="clear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 230.0
+offset_right = 429.0
+offset_bottom = 273.0
+text = "cl"
+
+[node name="exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 545.0
+offset_top = 220.0
+offset_right = 643.0
+offset_bottom = 268.0
+text = "exit"
+
+[connection signal="pressed" from="cal" to="." method="_on_cal_pressed"]

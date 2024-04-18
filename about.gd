@@ -12,7 +12,7 @@ func _process(delta):
 
 
 func _on_show_btn_pressed():
-	$t.text="i am a lazy person"
+	$t.text="this is a code i made do to being bord and besas of this prison caled schoool"
 
 func _on_clear_btn_pressed():
 	$t.text=""
